@@ -58,7 +58,6 @@ const ImageBlock = ({ block }) => {
         multiple: false,
         action: `${config.baseURL}/media/media`,
         headers: {
-            "x-user-id": "1480d296-093c-4975-9592-bbbc82449972",
             'Authorization': 'Bearer ' + getToken(),
         },
         beforeUpload: (file) => {
@@ -76,7 +75,7 @@ const ImageBlock = ({ block }) => {
             if (info.file.status === 'done') {
                 setIsUploading(false);
                 const { filename } = info.file.response;
-                const imageUrl = `${config.baseURL}/media/media/${filename}`; // Use config.baseURL
+                const imageUrl = `${config.baseURL}/media/media/${filename}`;
                 setImageContent(imageUrl);
                 setNewProps({
                     image: [[imageUrl]]
