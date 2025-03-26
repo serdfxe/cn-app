@@ -7,7 +7,7 @@ import data from '@emoji-mart/data'
 import Picker from '@emoji-mart/react'
 
 import { deleteBlock, patchBlock } from '../../../../client/notes/block';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { EventEmitter } from '../../../../events/events';
 import CreateReminderModal from './CreateReminderModal';
 import { createReminder } from '../../../../client/reminder/reminder';

@@ -3,8 +3,7 @@ import Block from '../Block';
 import DraggableContainer from '../DraggableContainer/DraggableContainer';
 
 import { Button } from 'antd';
-import { createBlock, getBlock } from '../../../client/notes/block';
-import { EventEmitter } from '../../../events/events';
+import { createBlock } from '../../../client/notes/block';
 
 const ContentCtx = ({ block, onUpdate, inline=false }) => {
     const [blockData, setBlockData] = useState(block);

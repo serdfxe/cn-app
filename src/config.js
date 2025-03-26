@@ -7,7 +7,7 @@
 // }
 
 const config = {
-    baseURL: "https://proxy.custom-notion.ru",
+    baseURL: "https://proxy.memorand.ru",
     authBaseURL: "http://localhost:8000",
     notesBaseURL: "http://localhost:8000",
     mediaBaseURL: "http://localhost:8000",

@@ -134,7 +134,7 @@ const WorkSpaceMenu = () => {
       setItems([
         {
           key: 'main-group',
-          label: 'Custom Notion',
+          label: 'Memorandum',
           type: 'group',
           children: [
             {

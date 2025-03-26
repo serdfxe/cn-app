@@ -1,4 +1,4 @@
-import { getBlock, patchBlock, pushBlockChildren } from "../client/notes/block";
+import { getBlock, pushBlockChildren } from "../client/notes/block";
 
 export const BlockStateManager = {
     getBlock(id) {

@@ -15,7 +15,7 @@
 
     border-radius: 6px;
 
-    background-color: white;
+    background: var(--ant-color-bg-container);
 
     padding: 12px 0 0 0;
     margin-bottom: -12px;

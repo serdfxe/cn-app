@@ -5,16 +5,25 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 
 import SignUpPage from './Pages/SignUpPage/SignUpPage';
 import SignInPage from './Pages/SignInPage/SignInPage';
-// import WorkSpace from './Pages/WorkSpace/WorkSpace';
-// import AccountPage from './Pages/AccountPage/AccountPage';
 import AppPage from './Pages/AppPage/AppPage';
-import { setAuthToken } from './client/auth';
 import RouteGuard from './components/RouteGuard/RouteGuard';
 import { useEffect, useState } from 'react';
 import { verifyToken } from './client/auth/auth';
+import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { initializeTheme } from './store/themeSlice';
+import { ConfigProvider, Flex } from 'antd';
+import { CssTokenBridge } from './components/CssTokenBridge';
 
 
 const App = () => {
+  const algorithm = useSelector((state) => state.theme);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(initializeTheme());
+  }, [dispatch]);
+
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
@@ -38,8 +47,10 @@ const App = () => {
   }
 
   return (
+    <ConfigProvider theme={ algorithm }>
       <Router>
-        <div className="App">
+        <Flex className="App" vertical>
+        <CssTokenBridge />
           <Routes>
             <Route path='auth/signup' element={<SignUpPage />}/>
             <Route path='auth/signin' element={<SignInPage />}/>
@@ -53,8 +64,9 @@ const App = () => {
             <Route path='*' element={<Navigate to="/app" />}/>
             <Route path='' element={<Navigate to="/app" />}/>
           </Routes>
-        </div>
+        </Flex>
       </Router>
+    </ConfigProvider>
   );
 }
 

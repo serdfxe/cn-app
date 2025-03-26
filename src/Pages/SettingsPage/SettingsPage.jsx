@@ -4,6 +4,7 @@ import { Divider, Flex, Typography } from 'antd';
 import { SettingOutlined } from '@ant-design/icons';
 
 import { useNavigate } from 'react-router-dom';
+import Settings from './Settings';
 
 const SettingsPage = () => {
     const navigate = useNavigate();
@@ -21,6 +22,7 @@ const SettingsPage = () => {
                 </Flex>
             </h1>   
             <Divider />
+            <Settings />
         </>
     );
 };

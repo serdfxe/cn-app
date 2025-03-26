@@ -44,8 +44,6 @@ const AppPage = () => {
         return (<></>);
     }
 
-    console.log(getWorkspace());
-
     return (
         <Page>
             <Routes>
